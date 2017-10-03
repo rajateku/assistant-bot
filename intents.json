@@ -1,0 +1,31 @@
+
+{"intents": [
+
+        {"tag": "retrieve-email",
+         "patterns": ["retrieve email to john from mary from 09/01 to 09/03","retrieve email", "email", "email from  mary"],
+         "responses": ["this is about email"],
+         "context_set": ""
+        },
+        {"tag": "retrieve-document",
+         "patterns": ["get document file from google drive", "get file from drive", "get document from google drive"],
+         "responses": ["gettting document"],
+         "context_set": ""
+        },
+        {"tag": "make-call",
+         "patterns": ["call linda now", "call alexa", "make a call to Andrew" , "Call Mom at work",
+                        "Call Dad office"],
+         "responses": ["making call"],
+         "context_set": ""
+        },
+        {"tag": "schedule-meeting",
+         "patterns": ["schedule meeting between Peter John Sam regarding project  at 09/06 3:00 pm", "schedule a meeting with Andrew", "Plan a meeting with Smith"],
+         "responses": ["scheduling meeting"],
+         "context_set": ""
+        },
+        {"tag": "add-action-item",
+         "patterns": [],
+         "responses": [],
+         "context_set": ""
+        }
+   ]
+}
