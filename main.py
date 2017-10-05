@@ -6,7 +6,7 @@ Created on Mon Sep 29 17:11:00 2017
 @author: Raja
 """
 
-# things we need for NLP
+# NLP and tensorflow libs
 
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
@@ -14,44 +14,16 @@ import urllib2
 import json
 stemmer = LancasterStemmer()
 
-# things we need for Tensorflow
+
 import numpy as np
 import tflearn
 import tensorflow as tf
 import random
 import entities
 
-# import our chat-bot intents file
-import json
-intents_file = "/home/Raja/Documents/Repositories/meeting_assistant_bot/intents.json"
 
-with open(intents_file) as json_data:
-    intents = json.load(json_data)
 
-import sys
-
-"""
-Created on Mon Sep 29 17:11:00 2017
-
-@author: Raja
-"""
-
-# things we need for NLP
-
-import nltk
-from nltk.stem.lancaster import LancasterStemmer
-import urllib2
-import json
-stemmer = LancasterStemmer()
-
-# things we need for Tensorflow
-import numpy as np
-import tflearn
-import tensorflow as tf
-import random
-import entities
-
-# import our chat-bot intents file
+#chat-bot intents file
 import json
 intents_file = "/home/Raja/Documents/Repositories/meeting_assistant_bot/intents.json"
 
@@ -128,8 +100,8 @@ net = tflearn.regression(net)
 # Define model and setup tensorboard
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 # # Start training (apply gradient descent algorithm)
-model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
-model.save('model.tflearn')
+# model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
+# model.save('model.tflearn')
 
 # save all of our data structures
 import pickle
@@ -209,17 +181,15 @@ def responsemessage(sentence, userID='123', show_details=False):
                     return final_reply
 
 
-            # results.pop(0)
-
 
 
 def main():
     # text = "schedule a meeting in Australia with John and Andrew at 1:30" #sys.argv[1]
     # text = "Call Mom" #sys.argv[1]
-    text = "Call Mom" #sys.argv[1]
+    text = "call Linda now "  #sys.argv[1]
     ser = responsemessage(text)
-    probabilities = classify("Schedule a meeting with John")
-    print ser, probabilities
+    # probabilities = classify("Schedule a meeting with John")
+    print ser   #, probabilities
 
 
 if __name__ == '__main__':

@@ -6,32 +6,21 @@ def frommain(tag , sentence):
     print namedEntities(sentence)
     if intent == 'retrieve-email':
         email(sentence)
-        # print "email"
         return email(sentence)
     if intent == 'retrieve-document':
-        # print "document"
-        return document(sentence)
+        return documents(sentence)
     if intent == 'make-call':
-        # print "call"
         return call(sentence)
     if intent == 'schedule-meeting':
-        # print "meeting"
         return meeting(sentence)
     if intent == 'add-action-item':
-        # print "action"
         return action(sentence)
     else:
         return intent
     # return intent
 
-def email(sentence):
-    names = nameSlot(sentence)
-    times = timeSlot(sentence)
-    return names , times
 
-def document(sentence):
-    nes = namedEntities(sentence)
-    return  nes
+
 
 def call(sentence):
     final_response = "calling"
@@ -59,6 +48,41 @@ def meeting(sentence):
     except Exception:
         pass
     return  final_response
+
+
+def email(sentence):
+    # times = timeSlot(sentence)
+    final_response = "fetching email"
+    try:
+        name = nameSlot(sentence)
+        # print "calling " + name[0]
+        if(len(name)>1):
+            final_response = "fetching email " + name[1]
+        else:
+            final_response = "fetching email " + name[0]
+    except Exception:
+        pass
+    return final_response
+
+
+def documents(sentence):
+    final_response = "fetching document"
+    from_lookup = ["from"]
+    from nltk import word_tokenize, sent_tokenize, pos_tag, ne_chunk_sents
+    punctuations = ['.', ',', ':', "?", "!", "'", "\"", ";", "&", "a"]
+    standardized_sentence = [token.lower() for token in word_tokenize(sentence) if token not in punctuations]
+    from_position = []
+    for i, token in enumerate(standardized_sentence):
+        if token in from_lookup:
+            from_position.append(i)
+            # break
+
+    document = standardized_sentence[from_position[0] - 1]
+    document_location = standardized_sentence[from_position[0] + 1]
+    final_response = final_response + " "+  document + " from " + document_location
+
+    return final_response
+
 
 def action(sentence):
     nes = namedEntities(sentence)
@@ -119,3 +143,5 @@ def organisatioSlot(sentence):
 
 s = "June, 2008-06-29"
 # print(nltk.ne_chunk("s", binary=True))
+
+

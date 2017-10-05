@@ -14,6 +14,10 @@ example : classify("Schedule a meeting with John")
 Outcome format [(u'schedule-meeting', 0.87971735)]
 
 
+Model: 
+
+Used tensorflow which follows Deep neural ntwork for text classification.
+I used internet resources for the text classification model.
 
 Categories (labels or tags) :
 
@@ -28,5 +32,17 @@ Issues faced:
 Tough to find a library which extracts time from sentence 
 
 
+
+
+
+Running the code.
+Files used :
+1) main.py
+2) preprocessing.py
+3) entities.py
+4) intents.json
+
+run main.py file by changing the text inside main() function for appropriate bot response. 
+In case of names start with capital letters eg : John
 
 

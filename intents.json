@@ -2,12 +2,14 @@
 {"intents": [
 
         {"tag": "retrieve-email",
-         "patterns": ["retrieve email to john from mary from 09/01 to 09/03","retrieve email", "email", "email from  mary"],
+         "patterns": ["retrieve email to john from mary from 09/01 to 09/03","retrieve email from Smith", "email from James", 
+         "email from  mary" , "get email from Sam" , "email from Watson"],
          "responses": ["this is about email"],
          "context_set": ""
         },
         {"tag": "retrieve-document",
-         "patterns": ["get document file from google drive", "get file from drive", "get document from google drive"],
+         "patterns": ["get document file from google drive", "get document from drive", "get document dssdcc from google drive",
+         "document dssdcc from dkskd ", "show document oocdkc from kcokod", "document from wokdk"],
          "responses": ["gettting document"],
          "context_set": ""
         },
