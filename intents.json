@@ -2,32 +2,39 @@
 {"intents": [
 
         {"tag": "retrieve-email",
-         "patterns": ["retrieve email to john from mary from 09/01 to 09/03","retrieve email from Smith", "email from James", 
-         "email from  mary" , "get email from Sam" , "email from Watson"],
+         "patterns": ["retrieve email to john from mary from 09/01 to 09/03","retrieve email from Smith", "get emails from James", 
+         "get email from  mary" , "get email from Sam" ,"get email to Xylo from James" ,"retrieve email from Watson","email","mail"],
          "responses": ["this is about email"],
          "context_set": ""
         },
+
         {"tag": "retrieve-document",
          "patterns": ["get document file from google drive", "get document from drive", "get document dssdcc from google drive",
-         "document dssdcc from dkskd ", "show document oocdkc from kcokod", "document from wokdk"],
+         "document dssdcc from dkskd ", "show document oocdkc from kcokod", "document from wokdk", "document","file"],
          "responses": ["gettting document"],
          "context_set": ""
         },
+
         {"tag": "make-call",
          "patterns": ["call linda now", "call alexa", "make a call to Andrew" , "Call Mom at work",
-                        "Call Dad office"],
+                        "Call Dad office", "get Raja on call ", "Just call Nava" , "make a call to James", "call Smith", "call to Philips","call", "phone call",
+                        "phone"],
          "responses": ["making call"],
          "context_set": ""
         },
+
         {"tag": "schedule-meeting",
-         "patterns": ["schedule meeting between Peter John Sam regarding project  at 09/06 3:00 pm", "schedule a meeting with Andrew", "Plan a meeting with Smith"],
+         "patterns": ["schedule meeting between Peter John Sam regarding project  at 09/06 3:00 pm", "schedule a meeting with Andrew", 
+         "plan a meeting with Smith", " plan a meeting with George" , "plan meeting", "schedule meeting", "meeting"],
          "responses": ["scheduling meeting"],
          "context_set": ""
         },
+
         {"tag": "add-action-item",
-         "patterns": [],
-         "responses": [],
-         "context_set": ""
+         "patterns": ["remind me to take a note", "take a note", "remind me about my date" , "remind me this", "remind me that", "add this as a task", 
+         "add a todo", "make a list","do for me", "remind", "note","item"],
+         "responses": ["adding it"],
+         "context_set": ""  
         }
    ]
 }

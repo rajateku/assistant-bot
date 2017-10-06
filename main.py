@@ -54,7 +54,9 @@ words = sorted(list(set(words)))
 
 # remove duplicates
 classes = sorted(list(set(classes)))
-
+print (len(documents), "Sentences for training")
+print (len(classes), "classes", classes)
+print (len(words), "unique stemmed words", words)
 
 # create our training data
 training = []
@@ -100,6 +102,11 @@ net = tflearn.regression(net)
 # Define model and setup tensorboard
 model = tflearn.DNN(net, tensorboard_dir='tflearn_logs')
 # # Start training (apply gradient descent algorithm)
+
+
+
+#TODO once you train the model you can coment the next cuple of lines of code so that u save your time
+
 # model.fit(train_x, train_y, n_epoch=1000, batch_size=8, show_metric=True)
 # model.save('model.tflearn')
 
@@ -117,7 +124,7 @@ classes = data['classes']
 train_x = data['train_x']
 train_y = data['train_y']
 
-
+print len(train_x)
 
 
 # import our chat-bot intents file
@@ -175,7 +182,7 @@ def responsemessage(sentence, userID='123', show_details=False):
                 if i['tag'] == results[0][0]:
                     # a random response from the intent
                     print i['tag']
-                    resp = (random.choice(i['responses']))
+                    # resp = (random.choice(i['responses']))
                     final_reply = entities.frommain(i['tag'],sentence)
                     # print rep
                     return final_reply
@@ -186,7 +193,7 @@ def responsemessage(sentence, userID='123', show_details=False):
 def main():
     # text = "schedule a meeting in Australia with John and Andrew at 1:30" #sys.argv[1]
     # text = "Call Mom" #sys.argv[1]
-    text = "call Linda now "  #sys.argv[1]
+    text = ""  #sys.argv[1]
     ser = responsemessage(text)
     # probabilities = classify("Schedule a meeting with John")
     print ser   #, probabilities
@@ -194,3 +201,10 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+l = [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1]
+len(l)
+
+k = [0, 0, 1, 0, 0, 0, 0, 0, 0]
+len(k)

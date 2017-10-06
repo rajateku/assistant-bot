@@ -57,9 +57,9 @@ def email(sentence):
         name = nameSlot(sentence)
         # print "calling " + name[0]
         if(len(name)>1):
-            final_response = "fetching email " + name[1]
+            final_response = "fetching email from " + name[1]
         else:
-            final_response = "fetching email " + name[0]
+            final_response = "fetching email from " + name[0]
     except Exception:
         pass
     return final_response
@@ -79,14 +79,14 @@ def documents(sentence):
 
     document = standardized_sentence[from_position[0] - 1]
     document_location = standardized_sentence[from_position[0] + 1]
-    final_response = final_response + " "+  document + " from " + document_location
+    final_response = final_response + " '"+  document + "' from " + document_location
 
     return final_response
 
 
 def action(sentence):
-    nes = namedEntities(sentence)
-    return  nes
+    response = "adding it to the TODO list"
+    return response
 
 def namedEntities(sentence):
     sent = nltk.tokenize.wordpunct_tokenize(sentence)
