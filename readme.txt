@@ -42,10 +42,11 @@ schedule-meeting
 add-action-item
 
 
+Choosing tensorflow over any other readily avialable tools like API.AI is because tensorflow gives flexibility to the conversation.
+
+
 Issues faced:
 Tough to find a library which extracts time from sentence 
-
-
 
 
 
